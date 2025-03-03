@@ -2,6 +2,10 @@
     <h6>Highlight text here</h6>
     <button (click)="toggleHighlight()">Toggle Highlight</button>
     <p appHighlightText >highlight works!</p>
+    <div>
+        <h6>highlight text by hover : </h6>
+        <h3 appHighlightText [highlightByHover]="true">hover on me</h3>
+    </div>
 </div>
 
 <!-- <p appHighlightText >highlight works!</p> -->

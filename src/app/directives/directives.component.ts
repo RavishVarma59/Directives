@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class DirectivesComponent {
 
+  listOfDirectives: string[] = ['HighLight-Dir','Mention-Dire'];
+  selectedComponent: string = 'HighLight-Dir';
+
+    constructor(){
+    console.log(this.listOfDirectives.length);
+    }
+
+    selectDirective(directive: string){
+    // console.log(directive);
+    this.selectedComponent = directive;
+    }
+
 }

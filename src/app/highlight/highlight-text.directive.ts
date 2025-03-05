@@ -6,7 +6,7 @@ import { HighlightTextServiceService } from './service/highlight-text-service.se
 })
 export class HighlightTextDirective implements OnInit {
   @Input()
-  highlightText: boolean = false;
+  toggleHighLight: boolean = false;
 
   @Input()
   highlightByHover: boolean = false;
@@ -40,10 +40,12 @@ export class HighlightTextDirective implements OnInit {
   constructor(private elementRef:ElementRef, private highlightService : HighlightTextServiceService) { 
     console.log('ElementRef', elementRef);
   }
+
   ngOnInit(): void {
     this.highlightService.toggleHighlight.subscribe((value) => {
-      this.highlightText = value;
-      this.highlight(this.highlightText);
+      if(this.toggleHighLight){
+        this.highlight(value);
+      }
     });
   }
 

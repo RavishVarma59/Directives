@@ -1,4 +1,15 @@
-<h6>Highlight text here</h6>
-<button (click)="toggleHighlight()">Toggle Highlight</button>
-<p appHighlightText  [highlightText]="isHighlight">highlight works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-6">    
+            <h6>Highlight text by toggle button here</h6>
+            <button (click)="toggleHighlight()">Toggle Highlight</button>
+            <p appHighlightText [toggleHighLight]="true">highlight works!</p></div>
+        <div class="col-6">
+            <h6>highlight text by hover : </h6>
+            <h3 appHighlightText [highlightByHover]="true" [defaultColor]="defaultColor">hover on me</h3>
+        </div>
+    </div>
+
+</div>
+
 <!-- <p appHighlightText >highlight works!</p> -->

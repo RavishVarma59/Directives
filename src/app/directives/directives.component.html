@@ -1,3 +1,7 @@
-<h6>Directives</h6>
+<h6 class="text-center m-2">Directives</h6>
 <hr>
-<highlight-comp></highlight-comp>
+<div *ngIf="listOfDirectives.length > 0" class="m-3 text-center row" >
+    <button *ngFor="let item of listOfDirectives" (click)="selectDirective(item)" class="col-2 m-2">{{item}}</button>
+</div>
+<hr>
+<highlight-comp *ngIf="selectedComponent === 'HighLight-Dir'"></highlight-comp>

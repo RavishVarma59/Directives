@@ -9,6 +9,7 @@ import { HighlightTextServiceService } from './service/highlight-text-service.se
 export class HighlightComponent {
   constructor(private highlightService: HighlightTextServiceService) { }
   isHighlight: boolean = false;
+  defaultColor: any = {backgroundColor: '#C7DB9C', color: '#E50046'};
 
   toggleHighlight(){
     this.isHighlight = !this.isHighlight;

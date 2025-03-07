@@ -1,0 +1,16 @@
+<p>reactive-table works!</p>
+<jd-search-bar></jd-search-bar>
+<div class="mx-5">
+    <table class="table table-striped">
+        <thead class="">
+            <tr>
+                <th *ngFor="let col of headerToShow" scope="col">{{col}}</th>
+            </tr>
+        </thead>
+        <tbody class="">
+            <tr *ngFor="let row of records" >
+                <td *ngFor="let data of headerToShow">{{row[data]}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

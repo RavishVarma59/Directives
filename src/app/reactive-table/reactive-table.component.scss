@@ -1,0 +1,16 @@
+.datatable table {
+    font-size: var(--mdb-datatable-font-size);
+    color: var(--mdb-datatable-color);
+    background-color: inherit;
+    margin-bottom: 0;
+    border-color: var(--mdb-datatable-border-color);
+}
+
+.datatable thead {
+    background-color: inherit;
+}
+
+.datatable tbody {
+    font-weight: var(--mdb-datatable-tbody-font-weight);
+    background-color: inherit;
+}

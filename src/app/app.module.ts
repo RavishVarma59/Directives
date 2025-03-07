@@ -6,17 +6,23 @@ import { AppComponent } from './app.component';
 import { HighlightComponent } from './highlight/highlight.component';
 import { HighlightTextDirective } from './highlight/highlight-text.directive';
 import { DirectivesComponent } from './directives/directives.component';
+import { ReactiveTableComponent } from './reactive-table/reactive-table.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HighlightComponent,
     HighlightTextDirective,
-    DirectivesComponent
+    DirectivesComponent,
+    ReactiveTableComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

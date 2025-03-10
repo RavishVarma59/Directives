@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { HighlightTextServiceService } from '../highlight/service/highlight-text-service.service';
 
 @Component({
@@ -12,13 +12,13 @@ export class ReactiveTableComponent implements OnInit {
     "id", "firstName", "lastName", "maidenName", "age", "gender", "email", "phone", "username", "password", "birthDate", "image", "bloodGroup", "height", "weight", "eyeColor", "hair", "ip", "address", "macAddress", "university", "bank", "company", "ein", "ssn", "userAgent", "crypto", "role"
   ];
 
-  headerToShow = ["username", "lastName", "role" , "password", "gender", "bloodGroup"];
+  headerToShow = ["username", "email", "role" , "password", "gender", "bloodGroup"];
 
   records: any[] = [];
   allRecords: any[] = [];
   searchedText: string = "";
 
-  constructor(private highlightService: HighlightTextServiceService) {}
+  constructor(private highlightService: HighlightTextServiceService, private cd: ChangeDetectorRef) {}
 
   ngOnInit() {
     this.getRecords()
@@ -30,7 +30,7 @@ export class ReactiveTableComponent implements OnInit {
     .then(response => response.json())
     .then((data:any) => {
       console.log(data);
-      this.allRecords = data?.users;
+      // this.allRecords = data?.users;
       data?.users.forEach((record : any) => {
         let newRecord: any = {};
         this.headerToShow.forEach((col: any) => {
@@ -38,6 +38,7 @@ export class ReactiveTableComponent implements OnInit {
         });
         this.records.push(newRecord);
       });
+      this.allRecords = this.records;
       console.log("Records: ", this.records);
 
     }).catch(error => {
@@ -45,11 +46,27 @@ export class ReactiveTableComponent implements OnInit {
     });
   }
 
+  filterRecords(searchedText: string) {
+    this.records = this.allRecords.filter((record) =>
+      Object.values(record).join().toLowerCase().includes(this.searchedText.toLowerCase())
+    );
+  }
+
+
   onSearch(event:any){
     console.log("table search ",event);
     this.searchedText = event;
+    if(!this.searchedText) {
+      this.records = this.allRecords;
+    } else {
+      this.filterRecords(this.searchedText);
+      // this.cd.detectChanges();
+    }
+    // this.cd.detectChanges();
+    setTimeout(() => {
     this.highlightService.textSearched.next(event);
-    
+      
+    }, 0);
     // this.records = this.allRecords.filter((record: any) => {
     //   return Object.values(record).join().includes(this.searchedText);
     // });

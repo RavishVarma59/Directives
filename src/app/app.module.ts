@@ -9,6 +9,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { ReactiveTableComponent } from './reactive-table/reactive-table.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
+import { HighlightElementDirective } from './highlight/highlight-element.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     HighlightTextDirective,
     DirectivesComponent,
     ReactiveTableComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    HighlightElementDirective
   ],
   imports: [
     BrowserModule,

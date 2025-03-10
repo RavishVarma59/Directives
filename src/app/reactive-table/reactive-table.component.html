@@ -1,5 +1,5 @@
 <p>reactive-table works!</p>
-<jd-search-bar></jd-search-bar>
+<jd-search-bar (searchedTxt)="onSearch($event)"></jd-search-bar>
 <div class="mx-5">
     <table class="table table-striped">
         <thead class="">
@@ -9,7 +9,7 @@
         </thead>
         <tbody class="">
             <tr *ngFor="let row of records" >
-                <td *ngFor="let data of headerToShow">{{row[data]}}</td>
+                <td JdHighlightElement *ngFor="let data of headerToShow">{{row[data]}}</td>
             </tr>
         </tbody>
     </table>

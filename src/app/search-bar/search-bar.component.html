@@ -3,7 +3,7 @@
 <div class="my-4">
     <div class="search-container d-flex me-5 justify-content-end">
       <input type="text" class="" [(ngModel)]="searchText" (ngModelChange)="onTextEnter($event)" placeholder="Search...">
-      <button>search</button>
+      <button (click)="onSearch($event)">search</button>
       <!-- <i class="fas fa-search search-icon"></i> -->
     </div>
 </div>

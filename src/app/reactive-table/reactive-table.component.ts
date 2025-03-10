@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HighlightTextServiceService } from '../highlight/service/highlight-text-service.service';
 
 @Component({
   selector: 'jd-reactive-table',
@@ -15,8 +16,9 @@ export class ReactiveTableComponent implements OnInit {
 
   records: any[] = [];
   allRecords: any[] = [];
+  searchedText: string = "";
 
-  constructor() {}
+  constructor(private highlightService: HighlightTextServiceService) {}
 
   ngOnInit() {
     this.getRecords()
@@ -41,6 +43,16 @@ export class ReactiveTableComponent implements OnInit {
     }).catch(error => {
       console.error('Error:', error)
     });
+  }
+
+  onSearch(event:any){
+    console.log("table search ",event);
+    this.searchedText = event;
+    this.highlightService.textSearched.next(event);
+    
+    // this.records = this.allRecords.filter((record: any) => {
+    //   return Object.values(record).join().includes(this.searchedText);
+    // });
   }
 
 }

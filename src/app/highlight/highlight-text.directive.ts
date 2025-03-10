@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Input, OnInit } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, output } from '@angular/core';
 import { HighlightTextServiceService } from './service/highlight-text-service.service';
 
 @Directive({
@@ -13,6 +13,8 @@ export class HighlightTextDirective implements OnInit {
 
   @Input()
   defaultColor: any = {backgroundColor: 'yellow', color: 'red'};
+
+
 
 
 

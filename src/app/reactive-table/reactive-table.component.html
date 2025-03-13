@@ -1,6 +1,6 @@
-<p>reactive-table works!</p>
+
 <jd-search-bar (searchedTxt)="onSearch($event)"></jd-search-bar>
-<div class="mx-5">
+<div class="mx-5" *ngIf="records.length">
     <table class="table table-striped">
         <thead class="">
             <tr>

@@ -12,7 +12,7 @@ export class ReactiveTableComponent implements OnInit {
     "id", "firstName", "lastName", "maidenName", "age", "gender", "email", "phone", "username", "password", "birthDate", "image", "bloodGroup", "height", "weight", "eyeColor", "hair", "ip", "address", "macAddress", "university", "bank", "company", "ein", "ssn", "userAgent", "crypto", "role"
   ];
 
-  headerToShow = ["username", "email", "role" , "password", "gender", "bloodGroup"];
+  headerToShow = ["username", "email", "role" , "password", "gender", "phone"];
 
   records: any[] = [];
   allRecords: any[] = [];

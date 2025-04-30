@@ -1,3 +1,7 @@
-<h6>Directives</h6>
+<h5 class="text-center py-3 header shadow-sm">Directives</h5>
+
+<div *ngIf="listOfDirectives.length > 0" class="m-3 text-center row" >
+    <button *ngFor="let item of listOfDirectives" (click)="selectDirective(item)" type="button" class="col-2 m-2 btn btn-primary">{{item}}</button>
+</div>
 <hr>
-<highlight-comp></highlight-comp>
+<highlight-comp *ngIf="selectedComponent === 'HighLight'"></highlight-comp>

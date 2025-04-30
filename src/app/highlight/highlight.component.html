@@ -1,4 +1,21 @@
-<h6>Highlight text here</h6>
-<button (click)="toggleHighlight()">Toggle Highlight</button>
-<p appHighlightText  [highlightText]="isHighlight">highlight works!</p>
+<div class="container shadow p-3 mb-3 bg-white rounded">
+    <div class="d-flex">
+        <div class="w-100">
+            <h6>Highlight text by toggle button here</h6>
+            <button type="button" class="btn btn-outline-primary" (click)="toggleHighlight()">Toggle Highlight</button>
+            <p appHighlightText [toggleHighLight]="true" class="my-2 py-2 ">
+               {{isHighlight ? 'Yeah, Am Highlighted !' : 'Click on Above Button to Highlight me.'}}
+            </p>
+        </div>
+        <div class="w-100">
+            <h6>highlight text by hover : </h6>
+            <h3 class="py-2 my-2" appHighlightText [highlightByHover]="true" [defaultColor]="defaultColor">hover on me</h3>
+        </div>
+    </div>
+
+    <jd-reactive-table></jd-reactive-table>
+    
+
+</div>
+
 <!-- <p appHighlightText >highlight works!</p> -->
